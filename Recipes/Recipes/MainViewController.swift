@@ -14,8 +14,8 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    @IBOutlet weak var textField: UITextField!
-    @IBAction func textFieldAction(_ sender: Any) {
+    @IBOutlet weak var mainViewTextField: UITextField!
+    @IBAction func mainViewTextFieldAction(_ sender: Any) {
     }
     
 }

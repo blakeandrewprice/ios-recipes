@@ -15,8 +15,8 @@ class RecipeDetailViewController: UIViewController {
         updateViews()
     }
     
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var recipeDetailLabel: UILabel!
+    @IBOutlet weak var recipeDetailTextView: UITextView!
     
     var recipe: Recipe? {
         didSet{
@@ -27,8 +27,8 @@ class RecipeDetailViewController: UIViewController {
     func updateViews() {
         if isViewLoaded {
             if let unwrappedRecipe = recipe {
-                label.text = unwrappedRecipe.name
-                textView.text = unwrappedRecipe.instructions
+                recipeDetailLabel.text = unwrappedRecipe.name
+                recipeDetailTextView.text = unwrappedRecipe.instructions
             }
         }
     }

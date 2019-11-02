@@ -21,7 +21,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="textFieldAction:" destination="bsF-9j-DMe" eventType="editingDidEndOnExit" id="ZRH-eU-pKV"/>
+                                    <action selector="mainViewTextFieldAction:" destination="bsF-9j-DMe" eventType="editingDidEndOnExit" id="ZRH-eU-pKV"/>
                                 </connections>
                             </textField>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q63-PV-oCP">
@@ -48,7 +48,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="YYt-1M-3Rb"/>
                     <connections>
-                        <outlet property="textField" destination="EQm-DL-fE4" id="s0d-1b-xXH"/>
+                        <outlet property="mainViewTextField" destination="EQm-DL-fE4" id="s0d-1b-xXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ml-eW-yyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -59,20 +59,21 @@
         <scene sceneID="8Z3-lh-Lrh">
             <objects>
                 <tableViewController id="vM2-QG-nhY" customClass="RecipesTableViewController" customModule="Recipes" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="4Nh-CA-Uj5">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="4Nh-CA-Uj5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="717"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <inset key="separatorInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="cvM-05-sch" style="IBUITableViewCellStyleDefault" id="IR1-Sd-oD4">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.666667938232422"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" textLabel="cvM-05-sch" style="IBUITableViewCellStyleDefault" id="IR1-Sd-oD4">
+                                <rect key="frame" x="20" y="55.333332061767578" width="374" height="43.666667938232422"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IR1-Sd-oD4" id="Lot-Jq-sl0">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.666667938232422"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="374" height="43.666667938232422"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cvM-05-sch">
-                                            <rect key="frame" x="20" y="0.0" width="374" height="43.666667938232422"/>
+                                            <rect key="frame" x="20" y="0.0" width="334" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -134,8 +135,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="qH5-Lg-fxj"/>
                     <connections>
-                        <outlet property="label" destination="XzW-Zx-2sR" id="qLf-dA-Rb2"/>
-                        <outlet property="textView" destination="H98-kS-nXc" id="fVj-Fk-obU"/>
+                        <outlet property="recipeDetailLabel" destination="XzW-Zx-2sR" id="qLf-dA-Rb2"/>
+                        <outlet property="recipeDetailTextView" destination="H98-kS-nXc" id="fVj-Fk-obU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ce-eg-Api" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
