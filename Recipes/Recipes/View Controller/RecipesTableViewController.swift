@@ -9,18 +9,19 @@
 import UIKit
 
 class RecipesTableViewController: UITableViewController {
-
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    //MARK: - Properties
     var recipes: [Recipe] = [] {
         didSet{
             tableView.reloadData()
         }
     }
-    // MARK: - Table view data source
     
+    // MARK: - Table View Data Source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -37,6 +38,7 @@ class RecipesTableViewController: UITableViewController {
         return cell
     }
     
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "CellDetailViewSegue" {
             if let recipeDetailVC = segue.destination as? RecipeDetailViewController,

@@ -9,7 +9,7 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         networkClient.fetchRecipes { (recipeArray, error) in
@@ -21,14 +21,18 @@ class MainViewController: UIViewController {
             }
         }
     }
-    
+    //MARK: - Outlet
     @IBOutlet weak var mainViewTextField: UITextField!
+    
+    //MARK: - Action
     @IBAction func mainViewTextFieldAction(_ sender: Any) {
         mainViewTextField.resignFirstResponder()
         filterRecipes()
     }
     
     let networkClient = RecipesNetworkClient()
+    
+    //MARK: - Properties
     var allRecipes: [Recipe] = [] {
         didSet{
             filterRecipes()
@@ -46,23 +50,22 @@ class MainViewController: UIViewController {
         }
     }
     
+    //MARK: - Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EmbedTableViewSegue" {
             recipesTableViewController = segue.destination as? RecipesTableViewController
         }
     }
     
+    //MARK: - Functions
     func filterRecipes() {
-        if let search = mainViewTextField.text {
-            if search == "" {
-                filteredRecipes = allRecipes
-            } else {
-                filteredRecipes = allRecipes.filter { (recipe) -> Bool in
-                    return recipe.name.contains(search) || recipe.instructions.contains(search)
-                }
-            }
-        } else {
+        let search = mainViewTextField.text ?? ""
+        if search == "" {
             filteredRecipes = allRecipes
+        } else {
+            filteredRecipes = allRecipes.filter { (recipe) -> Bool in
+                return recipe.name.contains(search) || recipe.instructions.contains(search)
+            }
         }
     }
 }
