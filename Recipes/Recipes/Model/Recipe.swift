@@ -8,7 +8,7 @@
 import Foundation
 
 struct Recipe: Codable {
-    
+    //MARK: - Properties
     var name: String
     var instructions: String
     
